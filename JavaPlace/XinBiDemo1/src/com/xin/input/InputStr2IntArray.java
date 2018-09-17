@@ -13,6 +13,7 @@ public class InputStr2IntArray {
 		String strInput, strA, strB, strK;
 		Scanner s = new Scanner(System.in);
 		strInput = s.next();
+		s.close();
 		//index = strInput.charAt("-");
 		strA = strInput.substring(0, strInput.indexOf("-"));
 		strB = strInput.substring(strInput.indexOf("-")+1, strInput.indexOf(":"));
