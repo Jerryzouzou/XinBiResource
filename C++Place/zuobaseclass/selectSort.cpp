@@ -2,27 +2,27 @@
 using namespace std;
 
 /*
-*冒泡排序代码
-*每次循环从头到尾不断比较，大的换到后面，每次循环最大的在当前范围最后，不断缩小范围
-*时间复杂度O(n2),额外空间复杂度O(1),稳定 
+*选择排序代码
+*每次循环找到当前范围最小点索引，然后把最小和头交换，不断缩小范围
+*时间复杂度O(n2),额外空间复杂度O(1),不稳定 
 */
 
 /*
-*冒泡法排序数组 
-*每次循环从头到尾不断比较，大的换到后面，每次循环最大的在当前范围最后，不断缩小范围
-*时间复杂度O(n2),额外空间复杂度O(1),稳定 
+*选择法排序数组 
+*每次循环找到当前范围最小点索引，然后把最小和头交换，不断缩小范围
+*时间复杂度O(n2),额外空间复杂度O(1),不稳定 
 */
-void bubble_sort(int* arr, int len){
+void select_sort(int* arr, int len){
 	if(len <= 1){
 		return;
 	}
-	for(int j=len-1; j>0; j--){
-		for(int i=0; i<j; i++){
-			if(arr[i] > arr[i+1]){
-				array_ij_swap(arr, i, i+1);
-			}
+	for(int i=0; i<len; i++){
+		int minIndex = i;
+		for(int j=i+1; j<len; j++){
+			minIndex = arr[minIndex]<arr[j] ? minIndex : j;
 		}
-	}
+		if(i != minIndex) array_ij_swap(arr, i, minIndex);
+	} 
 } 
 
 /*
@@ -32,7 +32,7 @@ static void own_sort(int* arr, int len){
 	sort(arr, arr+len);
 }
 
-void bubble_main(){
+void select_sort_main(){
 	string strRes = "";
 	int testTime = 10;
 	int maxSize = 100;
@@ -44,7 +44,7 @@ void bubble_main(){
 		int* arr2 = new int[len];
 		generateRandomArray(arr1, len, maxValue);
 		copy_array(arr1, arr2, len, len);
-		bubble_sort(arr1, len);
+		select_sort(arr1, len);
 		own_sort(arr2, len);
 		if (!isEqual_intArr(arr1, arr2, len, len)) {
 			succeed = false;
@@ -58,7 +58,7 @@ void bubble_main(){
 	int* arr = new int[len];
 	generateRandomArray(arr, len, maxValue);
 	print_int_array(arr, len);
-	bubble_sort(arr, len);
+	select_sort(arr, len);
 	print_int_array(arr, len);
 }
 

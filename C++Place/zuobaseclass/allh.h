@@ -18,6 +18,9 @@
 
 #include "tool.h" 
 #include "bubbleSort.h"
+#include "selectSort.h"
+#include "insertionSort.h"
+#include "mergeSort.h"
 
 #define random(x) (rand()%(x))
 
