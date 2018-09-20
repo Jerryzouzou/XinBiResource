@@ -16,6 +16,10 @@ int main(int argc, char** argv) {
 	merge_sort_main();		//归并法排序 
 	cout<<"------------快速排序法------------" <<endl;
 	quick_sort_main();		//快速排序法 
+	cout<<"------------桶排序--0~200 ------------" <<endl;
+	bucket_sort_main();		//桶排序--0~200 
+	cout<<"------------二叉树遍历------------" <<endl;
+	pre_in_pos_2tree_traversal_main();		//二叉树遍历 
 	
 	return 0;
 }

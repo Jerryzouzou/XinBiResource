@@ -14,7 +14,8 @@
 #include <algorithm>
 #include <sstream>
 #include <math.h>
-
+#include <malloc.h>
+#include <stack> 
 
 #include "tool.h" 
 #include "bubbleSort.h"
@@ -22,6 +23,8 @@
 #include "insertionSort.h"
 #include "mergeSort.h"
 #include "quickSort.h"
+#include "bucketSort.h"
+#include "pre_in_pos_2tree_traversal.h"
 
 #define random(x) (rand()%(x))
 
