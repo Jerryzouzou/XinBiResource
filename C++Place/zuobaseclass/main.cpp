@@ -14,6 +14,8 @@ int main(int argc, char** argv) {
 	insertion_sort_main();	//插入法排序 
 	cout<<"------------归并法排序------------" <<endl;
 	merge_sort_main();		//归并法排序 
+	cout<<"------------快速排序法------------" <<endl;
+	quick_sort_main();		//快速排序法 
 	
 	return 0;
 }

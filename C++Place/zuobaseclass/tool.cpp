@@ -14,9 +14,9 @@ static int count(T& x){		//计算x的长度
 *int 数组中，i，j位置的值对调 
 */
 void array_ij_swap(int* arr, int i, int j){
-	arr[i] = arr[i] ^ arr[j];
-	arr[j] = arr[i] ^ arr[j];
-	arr[i] = arr[i] ^ arr[j];
+	int tmp = arr[i];
+	arr[i] = arr[j];
+	arr[j] = tmp;
 }
 
 /**

@@ -21,6 +21,7 @@
 #include "selectSort.h"
 #include "insertionSort.h"
 #include "mergeSort.h"
+#include "quickSort.h"
 
 #define random(x) (rand()%(x))
 
