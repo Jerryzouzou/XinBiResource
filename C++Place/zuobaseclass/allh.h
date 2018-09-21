@@ -25,6 +25,7 @@
 #include "quickSort.h"
 #include "bucketSort.h"
 #include "pre_in_pos_2tree_traversal.h"
+#include "dp_noequal_num_sum.h"
 
 #define random(x) (rand()%(x))
 

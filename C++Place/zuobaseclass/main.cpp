@@ -20,6 +20,8 @@ int main(int argc, char** argv) {
 	bucket_sort_main();		//桶排序--0~200 
 	cout<<"------------二叉树遍历------------" <<endl;
 	pre_in_pos_2tree_traversal_main();		//二叉树遍历 
+	cout<<"------------小米笔试-DP------------" <<endl;
+	xiaomi_main();		//动态规划--不同数组不重复能否组合成指定数 
 	
 	return 0;
 }
