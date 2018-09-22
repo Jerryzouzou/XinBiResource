@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o tool.o bubbleSort.o selectSort.o insertionSort.o mergeSort.o quickSort.o bucketSort.o pre_in_pos_2tree_traversal.o dp_noequal_num_sum.o
-LINKOBJ  = main.o tool.o bubbleSort.o selectSort.o insertionSort.o mergeSort.o quickSort.o bucketSort.o pre_in_pos_2tree_traversal.o dp_noequal_num_sum.o
+OBJ      = main.o tool.o bubbleSort.o selectSort.o insertionSort.o mergeSort.o quickSort.o bucketSort.o pre_in_pos_2tree_traversal.o dp_noequal_num_sum.o dp_road_ways_npkm.o
+LINKOBJ  = main.o tool.o bubbleSort.o selectSort.o insertionSort.o mergeSort.o quickSort.o bucketSort.o pre_in_pos_2tree_traversal.o dp_noequal_num_sum.o dp_road_ways_npkm.o
 LIBS     = -L"D:/Dev-Cpp/MinGW64/lib" -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -53,3 +53,6 @@ pre_in_pos_2tree_traversal.o: pre_in_pos_2tree_traversal.cpp
 
 dp_noequal_num_sum.o: dp_noequal_num_sum.cpp
 	$(CPP) -c dp_noequal_num_sum.cpp -o dp_noequal_num_sum.o $(CXXFLAGS)
+
+dp_road_ways_npkm.o: dp_road_ways_npkm.cpp
+	$(CPP) -c dp_road_ways_npkm.cpp -o dp_road_ways_npkm.o $(CXXFLAGS)

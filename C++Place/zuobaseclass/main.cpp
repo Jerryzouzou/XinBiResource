@@ -22,6 +22,8 @@ int main(int argc, char** argv) {
 	pre_in_pos_2tree_traversal_main();		//二叉树遍历 
 	cout<<"------------小米笔试-DP------------" <<endl;
 	xiaomi_main();		//动态规划--不同数组不重复能否组合成指定数 
+	cout<<"------------获取走的方法数-DP------" <<endl;
+	dp_roadWays_main();	//动态规划--范围1~n，当前位置p，走k步，能走到m的方法数； 
 	
 	return 0;
 }
