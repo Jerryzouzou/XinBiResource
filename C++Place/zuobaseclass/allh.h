@@ -27,6 +27,7 @@
 #include "pre_in_pos_2tree_traversal.h"
 #include "dp_noequal_num_sum.h"
 #include "dp_road_ways_npkm.h"
+#include "dp_maxsum_subarray.h"
 
 #define random(x) (rand()%(x))
 

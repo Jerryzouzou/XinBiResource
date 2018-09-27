@@ -24,6 +24,8 @@ int main(int argc, char** argv) {
 	xiaomi_main();		//动态规划--不同数组不重复能否组合成指定数 
 	cout<<"------------获取走的方法数-DP------" <<endl;
 	dp_roadWays_main();	//动态规划--范围1~n，当前位置p，走k步，能走到m的方法数； 
+	cout<<"------------数组最大子序和-DP------" <<endl;
+	maxsum_subarr_main();	//动态规划--数组内最大和的连续子数组的和 
 	
 	return 0;
 }
