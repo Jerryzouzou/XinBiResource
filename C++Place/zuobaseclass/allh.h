@@ -28,6 +28,9 @@
 #include "dp_noequal_num_sum.h"
 #include "dp_road_ways_npkm.h"
 #include "dp_maxsum_subarray.h"
+#include "eor_oddNumber.h"
+#include "comparator.h"
+#include "heapSort.h"
 
 #define random(x) (rand()%(x))
 

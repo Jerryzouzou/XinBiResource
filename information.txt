@@ -1,0 +1,19 @@
+一、基础班：
+1.1、第一课：
+	--code_00-----√---冒泡排序
+	--code_01-----√---插入排序
+	--code_02-----√---选择排序
+	--code_03-----
+	--code_04-----√---快速排序
+	--code_05-----√---归并排序
+	--code_06-----√---桶排序
+	--code_07-----
+	--code_08-----
+	--code_09-----√---比较器
+	--code_10-----
+	--code_11-----
+	--code_12-----
+1.2、第二课：
+
+	[Error] conversion from 'student*' to non-scalar type 'student' requested
+

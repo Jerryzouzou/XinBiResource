@@ -16,6 +16,8 @@ int main(int argc, char** argv) {
 	merge_sort_main();		//归并法排序 
 	cout<<"------------快速排序法------------" <<endl;
 	quick_sort_main();		//快速排序法 
+	cout<<"------------堆排序法------------" <<endl;
+	heap_sort_main();		//堆排序法 
 	cout<<"------------桶排序--0~200 ------------" <<endl;
 	bucket_sort_main();		//桶排序--0~200 
 	cout<<"------------二叉树遍历------------" <<endl;
@@ -26,6 +28,10 @@ int main(int argc, char** argv) {
 	dp_roadWays_main();	//动态规划--范围1~n，当前位置p，走k步，能走到m的方法数； 
 	cout<<"------------数组最大子序和-DP------" <<endl;
 	maxsum_subarr_main();	//动态规划--数组内最大和的连续子数组的和 
+	cout<<"------------异或得到出现奇数次的数----" <<endl;
+	eor_getOddNum_main();	//异或得到出现奇数次的数 
+	cout<<"------------系统sort的各种排序----" <<endl;
+	comparator_main();		//系统sort的各种排序 
 	
 	return 0;
 }
