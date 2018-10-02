@@ -32,6 +32,16 @@ int main(int argc, char** argv) {
 	eor_getOddNum_main();	//异或得到出现奇数次的数 
 	cout<<"------------系统sort的各种排序----" <<endl;
 	comparator_main();		//系统sort的各种排序 
+	cout<<"------------堆方式获取数组中位数-------" <<endl;
+	medianNUm_heap_main();		//用大小跟堆方式获取中位数 
+	cout<<"------------自定义排序的priority_queue------" <<endl;
+	priority_queue_comparator_main();	//自定义排序的priority_queue 
+	cout<<"------------数组内数字相差最大值-桶------" <<endl;
+	maxGrap_main();		//不用排序用桶得到数组内数字相差最大值 
+	cout<<"------------数组实现栈stack-----------" <<endl;
+	array2stack_main();	//用数组实现栈stack 
+	cout<<"------------数组实现栈queue-----------" <<endl;
+	array2queue_main();	//用数组实现栈queue 
 	
 	return 0;
 }

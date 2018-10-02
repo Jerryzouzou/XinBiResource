@@ -6,5 +6,6 @@ void generateRandomArray(int* arr, int len, int maxvalue);	//²úÉú×î´óÖµmaxvalueÎ
 void copy_array(int* arr_from, int* arr_to, int len1, int len2);	//¿½±´arrarr_fromÊı×éµ½ arr_toÊı×é 
 bool isEqual_intArr(int *arr1, int* arr2, int len1, int len2);	//ÅĞ¶ÏintÊı×éÊÇ·ñÏàÍ¬
 void print_int_array(int* arr, int len);	//´òÓ¡intÊı×é£¬ÒÔ¿Õ¸ñ¼ä¸ô 
+void partition(int* arr, int* p, int l, int r, int v); 		//¶ÔÊı×él~r·¶Î§»®·ÖĞ¡ÓÚÇøµÈÓÚÇø´óÓÚÇø£¬PÊÇ²ÎÕÕÖµ 
 
 #endif

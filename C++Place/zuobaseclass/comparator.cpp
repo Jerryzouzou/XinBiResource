@@ -35,7 +35,7 @@ static bool compareAgeAsc(student* x, student* y) {
 }
 
 /*
-* 根据Age升序降序 
+* 根据Age降序排序 
 */
 static bool compareAgeDes(student* x, student* y) { 
     return (x->age > y->age); //sort by first element
@@ -79,6 +79,30 @@ void comparator_main(){
 	sort(students, students+3, compareAgeDes);
 	print_studengs(students, 3); 
 	
+}
+
+/*
+* 根据Age降序排序 --重载运算符 
+*/
+struct cmp{
+	bool operator()(student x, student y) { 		//一定要两队()() 
+	    return (x.age > y.age); //sort by first element
+	}
+};
+
+/*
+*priority_queue  自定义排序函数 
+*/
+void priority_queue_comparator_main(){
+	priority_queue<student, vector<student>, cmp> data_queue;
+	data_queue.push({5, 22, "小欣"});
+	data_queue.push({1, 26, "小超"});
+	data_queue.push({3, 18, "小鸭"});
+	
+	for(int i=0; i<3; i++){
+		cout<<"id=="<<data_queue.top().id<<"--age=="<<data_queue.top().age<<"--name=="<<data_queue.top().name<<endl;
+		data_queue.pop();
+	} 
 }
 
 

@@ -16,6 +16,8 @@
 #include <math.h>
 #include <malloc.h>
 #include <stack> 
+#include<functional>
+#include<ctime>
 
 #include "tool.h" 
 #include "bubbleSort.h"
@@ -31,6 +33,10 @@
 #include "eor_oddNumber.h"
 #include "comparator.h"
 #include "heapSort.h"
+#include "medianNum_heap.h"
+#include "maxGrap_noSort.h"
+#include "array2stack.h" 
+#include "array2queue.h" 
 
 #define random(x) (rand()%(x))
 
