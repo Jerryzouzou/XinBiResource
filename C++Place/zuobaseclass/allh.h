@@ -37,7 +37,13 @@
 #include "maxGrap_noSort.h"
 #include "array2stack.h" 
 #include "array2queue.h" 
+#include "getMin_stack.h"
 
 #define random(x) (rand()%(x))
+
+
+/*
+*
+*/
 
 #endif

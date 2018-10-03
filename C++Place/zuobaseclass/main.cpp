@@ -42,6 +42,8 @@ int main(int argc, char** argv) {
 	array2stack_main();	//用数组实现栈stack 
 	cout<<"------------数组实现栈queue-----------" <<endl;
 	array2queue_main();	//用数组实现栈queue 
+	cout<<"------------可以获取最小数的栈-----------" <<endl;
+	getMin_stack_main();	//实现一个可以获取最小数的栈 
 	
 	return 0;
 }
