@@ -1,3 +1,0 @@
-INDEX VERSION 1.126+F:\XinBiResource\JavaPlace\.metadata\.plugins\org.eclipse.jdt.core
-3529653821.index
-672223646.index
