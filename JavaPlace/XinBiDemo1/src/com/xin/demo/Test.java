@@ -6,8 +6,12 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		String aaa = "36.32F";
+		String bbb = aaa.substring(0, aaa.length()-1);
+		double ccc = Double.parseDouble(bbb);
+		System.out.println("ccc=="+ccc);
+		
+		
 	}
 
 	/**
