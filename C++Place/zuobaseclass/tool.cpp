@@ -73,6 +73,20 @@ void print_int_array(int* arr, int len){
 }
 
 /*
+* 打印vector-int的二维数组 
+*/
+void printMatrix_vector(vector<vector<int> > matrix){
+	int lenR = matrix.size();
+	int lenC = matrix[0].size();
+	for(int i=0; i<lenR; i++){
+		for(int j=0; j<lenC; j++){
+			cout<<matrix[i][j]<<" ";
+		}
+		cout<<endl;
+ 	}	
+} 
+
+/*
 * 荷兰国旗问题，将排序成小于区等于区和大于区
 * 左下标<最后一个数，小于区下一数字和左下标交换，小于区下标++右移，左下标++右移；
 * 左下标>最后一个数，大于区前一数字和左下标交换，大于区下标--左移；

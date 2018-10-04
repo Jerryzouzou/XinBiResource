@@ -46,6 +46,10 @@ int main(int argc, char** argv) {
 	getMin_stack_main();	//实现一个可以获取最小数的栈 
 	cout<<"------------之型打印二维数组-----------" <<endl;
 	printMatrixZigZag_main();	//之型打印二维数组 
+	cout<<"------------正方形数组旋转-----------" <<endl;
+	rotateMatrix_main();		//正方形数组旋转 
+	cout<<"------------/转圈打印数组-----------" <<endl;
+	printMatrixSpiralOrdar_main();	//转圈打印数组 
 	
 	return 0;
 }

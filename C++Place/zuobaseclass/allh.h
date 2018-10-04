@@ -39,6 +39,8 @@
 #include "array2queue.h" 
 #include "getMin_stack.h"
 #include "zigZagPrintMatrix.h"
+#include "rotateMatrix.h" 
+#include "printMatrixSpiralOrdar.h"
 
 #define random(x) (rand()%(x))
 
