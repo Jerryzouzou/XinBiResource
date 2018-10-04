@@ -44,6 +44,8 @@ int main(int argc, char** argv) {
 	array2queue_main();	//用数组实现栈queue 
 	cout<<"------------可以获取最小数的栈-----------" <<endl;
 	getMin_stack_main();	//实现一个可以获取最小数的栈 
+	cout<<"------------之型打印二维数组-----------" <<endl;
+	printMatrixZigZag_main();	//之型打印二维数组 
 	
 	return 0;
 }

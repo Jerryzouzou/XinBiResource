@@ -38,6 +38,7 @@
 #include "array2stack.h" 
 #include "array2queue.h" 
 #include "getMin_stack.h"
+#include "zigZagPrintMatrix.h"
 
 #define random(x) (rand()%(x))
 
