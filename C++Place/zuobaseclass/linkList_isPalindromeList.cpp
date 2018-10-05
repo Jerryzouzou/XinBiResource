@@ -61,7 +61,45 @@ bool isPalindromeList_useHalfStack(Node* head){
 }
 
 bool  isPalindromeList_to2list(Node* head){
-	
+	if(head == NULL || head->next==NULL){
+		return true;
+	}
+	bool res = true;
+	Node* n1 = head;	//从第一个节点开始 
+	Node* n2 = head;
+	//n2一下走两步，n1一下走一步。这样走完的时候n1就在中间部分的第一个
+	while(n2->next!=NULL && n2->next->next!=NULL){	//find mid node
+		n1 = n1->next;	//n1 --> mid node
+		n2 = n2->next->next;	//n2 ---> end node 
+	}
+	n2 = n1->next;
+	n1->next = NULL; //中间点指向NULL，最后从两边过来比较到NULL结束 
+	Node* n3 = NULL;
+	while(n2 != NULL){	//反向右半部门链表 
+		n3 = n2->next;
+		n2->next = n1;
+		n1 = n2;
+		n2 = n3;
+	} 	//反向完之后,n1指向最后一个节点，n2和n3为NULL 
+	n3 = n1; 	//保留最后一节点，为最后恢复链表准备
+	n2 = head; 
+	while(n1!=NULL && n2!=NULL){
+		if(n1->value != n2->value){
+			res = false;	//因为还要还原链表，所以不能直接返回 
+			break;
+		}
+		n1 = n1->next;
+		n2 = n2->next;
+	}  
+	n1 = n3->next;
+	n3->next = NULL; //还原最后一节点的next指向NULL
+	while(n1 != NULL){
+		n2 = n1->next;	//n1左边的节点 
+		n1->next = n3;
+		n3 = n1;
+		n1 = n2;
+	} 
+	return res;
 }
 
 /*
@@ -108,21 +146,13 @@ void linkList_isPalindromeList_main(){
 	int arr5[4] = {1, 2, 3, 1};
 	int arr6[5] = {1, 2, 2, 1};
 	int arr7[5] = {1, 2, 3, 2, 1};
-//	Node *head1 = (struct Node*)malloc(sizeof(Node));
-//	Node *head2 = (struct Node*)malloc(sizeof(Node));
-//	head1 = createList(arr1, 4);
-//	head2 = createList(arr2, 5);
-//	cout<<"链表1===";
-//	print_list(head1);
-//	cout<<"链表2===";
-//	print_list(head2);
-//	printListCommonPart(*head1, *head2);
+	
 	Node *head1 = NULL;
 	cout<<"链表为";
 	print_list(head1);
 	cout<<"栈方式--链表是否是回文结构："<<isPalindromeList_useStack(head1)<<endl;
 	cout<<"半栈方式--链表是否是回文结构："<<isPalindromeList_useHalfStack(head1)<<endl;
-	
+	cout<<"链表右半部分反向方式--链表是否是回文结构："<<isPalindromeList_to2list(head1)<<endl;
 	cout<<"======================="<<endl;
 	
 	Node *head2=new Node(1); //(struct Node*)malloc(sizeof(Node));
@@ -130,7 +160,7 @@ void linkList_isPalindromeList_main(){
 	print_list(head2);
 	cout<<"栈方式--链表是否是回文结构："<<isPalindromeList_useStack(head2)<<endl;
 	cout<<"半栈方式--链表是否是回文结构："<<isPalindromeList_useHalfStack(head2)<<endl;
-	
+	cout<<"链表右半部分反向方式--链表是否是回文结构："<<isPalindromeList_to2list(head2)<<endl;
 	cout<<"======================="<<endl;
 	
 	Node *head3 = createList(arr1, 2);
@@ -138,7 +168,7 @@ void linkList_isPalindromeList_main(){
 	print_list(head3);
 	cout<<"栈方式--链表是否是回文结构："<<isPalindromeList_useStack(head3)<<endl;
 	cout<<"半栈方式--链表是否是回文结构："<<isPalindromeList_useHalfStack(head3)<<endl;
-	
+	cout<<"链表右半部分反向方式--链表是否是回文结构："<<isPalindromeList_to2list(head3)<<endl;
 	cout<<"======================="<<endl;
 	
 	Node *head4 = createList(arr2, 2);
@@ -146,7 +176,7 @@ void linkList_isPalindromeList_main(){
 	print_list(head4);
 	cout<<"栈方式--链表是否是回文结构："<<isPalindromeList_useStack(head4)<<endl;
 	cout<<"半栈方式--链表是否是回文结构："<<isPalindromeList_useHalfStack(head4)<<endl;
-	
+	cout<<"链表右半部分反向方式--链表是否是回文结构："<<isPalindromeList_to2list(head4)<<endl;
 	cout<<"======================="<<endl;
 	
 	Node *head5 = createList(arr3, 3);
@@ -154,7 +184,7 @@ void linkList_isPalindromeList_main(){
 	print_list(head5);
 	cout<<"栈方式--链表是否是回文结构："<<isPalindromeList_useStack(head5)<<endl;
 	cout<<"半栈方式--链表是否是回文结构："<<isPalindromeList_useHalfStack(head5)<<endl;
-	
+	cout<<"链表右半部分反向方式--链表是否是回文结构："<<isPalindromeList_to2list(head5)<<endl;
 	cout<<"======================="<<endl;
 	
 	Node *head6 = createList(arr4, 3);
@@ -162,7 +192,7 @@ void linkList_isPalindromeList_main(){
 	print_list(head6);
 	cout<<"栈方式--链表是否是回文结构："<<isPalindromeList_useStack(head6)<<endl;
 	cout<<"半栈方式--链表是否是回文结构："<<isPalindromeList_useHalfStack(head6)<<endl;
-	
+	cout<<"链表右半部分反向方式--链表是否是回文结构："<<isPalindromeList_to2list(head6)<<endl;
 	cout<<"======================="<<endl;
 	
 	Node *head7 = createList(arr5, 4);
@@ -170,7 +200,7 @@ void linkList_isPalindromeList_main(){
 	print_list(head7);
 	cout<<"栈方式--链表是否是回文结构："<<isPalindromeList_useStack(head7)<<endl;
 	cout<<"半栈方式--链表是否是回文结构："<<isPalindromeList_useHalfStack(head7)<<endl;
-	
+	cout<<"链表右半部分反向方式--链表是否是回文结构："<<isPalindromeList_to2list(head7)<<endl;
 	cout<<"======================="<<endl;
 	
 	Node *head8 = createList(arr6, 4);
@@ -178,7 +208,7 @@ void linkList_isPalindromeList_main(){
 	print_list(head8);
 	cout<<"栈方式--链表是否是回文结构："<<isPalindromeList_useStack(head8)<<endl;
 	cout<<"半栈方式--链表是否是回文结构："<<isPalindromeList_useHalfStack(head8)<<endl;
-	
+	cout<<"链表右半部分反向方式--链表是否是回文结构："<<isPalindromeList_to2list(head8)<<endl;
 	cout<<"======================="<<endl;
 	
 	Node *head9 = createList(arr7, 5);
@@ -186,7 +216,7 @@ void linkList_isPalindromeList_main(){
 	print_list(head9);
 	cout<<"栈方式--链表是否是回文结构："<<isPalindromeList_useStack(head9)<<endl;
 	cout<<"半栈方式--链表是否是回文结构："<<isPalindromeList_useHalfStack(head9)<<endl;
-	
+	cout<<"链表右半部分反向方式--链表是否是回文结构："<<isPalindromeList_to2list(head9)<<endl;
 	cout<<"======================="<<endl;
 }
 
