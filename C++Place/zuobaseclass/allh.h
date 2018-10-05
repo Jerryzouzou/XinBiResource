@@ -43,6 +43,8 @@
 #include "printMatrixSpiralOrdar.h"
 #include "find_k_littlenum.h"
 #include "linkList_printCommonPart.h"
+#include "findNumInSortedMatrix.h"
+#include "linkList_isPalindromeList.h"
 
 #define random(x) (rand()%(x))
 

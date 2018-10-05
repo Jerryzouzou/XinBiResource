@@ -34,16 +34,16 @@ void printListCommonPart(Node head1, Node head2){
 	cout<<endl;
 }
 
-void print_list(struct Node* head){
+static void print_list(struct Node* head){
 	//Node *p1 = &head;
-	while(head->next != NULL){
+	while(head != NULL){
 		cout<<head->value<<"->";
 		head = head->next;
 	}
 	cout<<endl;
 }
 
-struct Node* createList(int* arr, int len){
+static struct Node* createList(int* arr, int len){
 	Node *head, *p1;
 	head = (struct Node*)malloc(sizeof(Node));
 	if((p1=(struct Node*)malloc(sizeof(Node))) == 0){
@@ -56,7 +56,9 @@ struct Node* createList(int* arr, int len){
 		Node *tmp = (struct Node*)malloc(sizeof(Node));
 		p1->value = arr[i];
 		p1->next = tmp;
-		p1 = p1->next;
+		if(i != len-1){
+			p1 = p1->next;
+		}
 	}
 	p1->next = NULL;
 	return head;

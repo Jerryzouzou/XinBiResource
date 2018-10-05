@@ -58,11 +58,11 @@ int *find_k_littleNUm(int *arr, int l, int r,int k)
 
 void find_k_littleNUm_main()
 {
-	int k[6] = { 1,2,3,4,5,6 };
+	int k[6] = { 8,2,3,4,5,6 };
 	int arr[8] = {22, 3, 4, 2, 5, 6, 8, 9};
 	//int *result = new int[size];
 	
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < 1; i++)
 	{
 		find_k_littleNUm(arr, 0, 7, k[i]);
 		cout<<"现在数组状态---"; 

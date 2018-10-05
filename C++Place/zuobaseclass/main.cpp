@@ -54,6 +54,10 @@ int main(int argc, char** argv) {
 	find_k_littleNUm_main();	//查找数组最小k个数 
 	cout<<"------------打印两个有序链表公共部分-----------" <<endl;
 	linkList_printCommonPart_main();	//打印两个有序链表公共部分 
+	cout<<"------------有序二维数组找某数-----------" <<endl;
+	findNumInSortedMatrix_main();	//有序二维数组找某数 
+	cout<<"------------链表是否是回文结构-----------" <<endl;
+	linkList_isPalindromeList_main();	//链表是否是回文结构 
 	
 	return 0;
 }
