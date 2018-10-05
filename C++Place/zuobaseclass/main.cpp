@@ -48,8 +48,12 @@ int main(int argc, char** argv) {
 	printMatrixZigZag_main();	//之型打印二维数组 
 	cout<<"------------正方形数组旋转-----------" <<endl;
 	rotateMatrix_main();		//正方形数组旋转 
-	cout<<"------------/转圈打印数组-----------" <<endl;
+	cout<<"------------转圈打印数组-----------" <<endl;
 	printMatrixSpiralOrdar_main();	//转圈打印数组 
+	cout<<"------------查找数组最小k个数-----------" <<endl;
+	find_k_littleNUm_main();	//查找数组最小k个数 
+	cout<<"------------打印两个有序链表公共部分-----------" <<endl;
+	linkList_printCommonPart_main();	//打印两个有序链表公共部分 
 	
 	return 0;
 }

@@ -41,6 +41,8 @@
 #include "zigZagPrintMatrix.h"
 #include "rotateMatrix.h" 
 #include "printMatrixSpiralOrdar.h"
+#include "find_k_littlenum.h"
+#include "linkList_printCommonPart.h"
 
 #define random(x) (rand()%(x))
 
