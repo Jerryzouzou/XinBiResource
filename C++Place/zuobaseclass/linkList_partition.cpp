@@ -8,4 +8,41 @@ using namespace std;
 * 遍历第二遍将剩下的数串入各自区，最后再将三个区串起来 
 */
 
+struct Node{
+	int value;
+	Node* next;
+	Node(int a=0):value(a), next(NULL){};
+};
+
+struct Node* listPartition_useArray(Node* head, int pivot){
+	if(head == NULL){
+		return head;
+	}
+	Node* cur = head;
+	int i=0;
+	vector<Node> nodeArr;
+	while(cur != NULL){
+		nodeArr.push_back(*cur);
+		cur = cur->next;
+	}
+	
+}
+
+/*
+* 打印链表 
+*/
+static void print_list(struct Node* head){
+	//Node *p1 = &head;
+	while(head != NULL){
+		cout<<head->value<<"->";
+		head = head->next;
+	}
+	cout<<endl;
+}
+
+void linkList_partition_main(){
+	int arr[7] = {7, 9, 1, 8, 5, 2, 5};
+	Node *head = createList(arr, 7);
+}
+
 
