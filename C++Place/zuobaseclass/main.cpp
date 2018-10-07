@@ -58,6 +58,8 @@ int main(int argc, char** argv) {
 	findNumInSortedMatrix_main();	//有序二维数组找某数 
 	cout<<"------------链表是否是回文结构-----------" <<endl;
 	linkList_isPalindromeList_main();	//链表是否是回文结构 
+	cout<<"------------链表partition-----------" <<endl;
+	linkList_partition_main();	//链表partition 
 	
 	return 0;
 }

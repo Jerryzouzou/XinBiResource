@@ -45,6 +45,7 @@
 #include "linkList_printCommonPart.h"
 #include "findNumInSortedMatrix.h"
 #include "linkList_isPalindromeList.h"
+#include "linkList_partition.h"
 
 #define random(x) (rand()%(x))
 
