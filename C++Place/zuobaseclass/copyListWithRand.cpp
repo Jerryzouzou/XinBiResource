@@ -7,7 +7,7 @@ using namespace std;
 * 连接关系去弄好拷贝节点的关系
 * 方法二、拷贝的每个节点都插入到原节点上a->a'->b...这样，然后每次拿两个a,a'，
 * 通过a找到a的rand指向节点i，然后a'的rand就指向i的下一个即i'，最后分离回原链表
-* 和拷贝的链表 
+* 和拷贝的链表---空间复杂度O(1) 
 */
 
 struct Node{
@@ -16,4 +16,23 @@ struct Node{
 	Node* rand;
 	Node(int a=0):value(a), next(NULL), rand(NULL){};
 };
+
+/*
+* 拷贝的每个节点都插入到原节点上a->a'->b...这样，然后每次拿两个a,a'，
+* 通过a找到a的rand指向节点i，然后a'的rand就指向i的下一个即i'，最后分离回原链表
+* 和拷贝的链表
+*/
+static struct Node* copyListWithRand(Node* head){
+	if(head == NULL){
+		return NULL;
+	}
+	Node* cur = head;
+	Node* next = NULL;
+	while(cur != NULL){
+		Node* tmp = (struct Node*)malloc(sizeof(Node));
+		tmp->value = cur->next;
+		
+	}
+	
+} 
 
