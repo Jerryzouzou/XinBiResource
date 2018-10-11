@@ -48,6 +48,7 @@
 #include "linkList_partition.h"
 #include "copyListWithRand.h"
 #include "linkList_isLoop.h"
+#include "linkList_reverse.h"
 
 #define random(x) (rand()%(x))
 
