@@ -60,6 +60,10 @@ int main(int argc, char** argv) {
 	linkList_isPalindromeList_main();	//链表是否是回文结构 
 	cout<<"------------链表partition-----------" <<endl;
 	linkList_partition_main();	//链表partition 
+	cout<<"------------带rand指针链表复制-----------" <<endl;
+	copyListWithRand_main(); 	//带rand指针链表复制 
+	cout<<"------------链表是否有环和入环点-----------" <<endl;
+	linkList_isLoop_main();		//链表是否有环和入环点 
 	
 	return 0;
 }

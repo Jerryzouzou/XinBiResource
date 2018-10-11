@@ -46,6 +46,8 @@
 #include "findNumInSortedMatrix.h"
 #include "linkList_isPalindromeList.h"
 #include "linkList_partition.h"
+#include "copyListWithRand.h"
+#include "linkList_isLoop.h"
 
 #define random(x) (rand()%(x))
 
