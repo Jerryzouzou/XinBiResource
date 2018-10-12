@@ -1,4 +1,5 @@
 #include "allh.h"
+//#include <unordered_map>  DEV不支持，要GCC 4.4以上才行 
 using namespace std;
 
 /*
@@ -60,11 +61,36 @@ static struct Node* copyListWithRand(Node* head){
 } 
 
 /*
-*
+* 用unordered_map将链表的每个节点和它的拷贝节点形成key-value放到hashmap中，然后
+* 再依次获取拷贝节点形成对应的next和rand关系 
 */
 static struct Node* copyListWithRand_useMap(Node* head){
 	Node *cur = head;
-	
+	/*unordered_map<Node, Node> map;	//unordered_map Dev c++不支持 
+	while(cur != NULL){		//拷贝节点，放入hashmap中 
+		map.insert(*cur, new Node(cur->value));
+		cur = cur->next;
+	} 
+	cur = head;
+	while(cur != NULL){
+		map.find(*cur)->next = map.find(*(cur->next));
+		map.find(*cur)->rand = map.find(*(cur->rand));
+		cur = cur->next;
+	} 
+	return map.find(head);*/
+	map<Node*, Node*> listMap;
+	while(cur != NULL){		//拷贝节点，放入hashmap中 
+		listMap.insert(pair<Node*, Node*>(cur, new Node(cur->value)));	//要用pair构造数据 
+		cur = cur->next;
+	} 
+	cur = head;
+	while(cur != NULL){
+		Node* tmp = listMap[cur];		//直接用 [key]方式获取 
+		tmp->next = listMap[cur->next];
+		tmp->rand = listMap[cur->rand];
+		cur = cur->next;
+	} 
+	return listMap[head];
 }
 
 /*
@@ -131,5 +157,8 @@ void copyListWithRand_main(){
 	print_list(head);
 	cout<<"**********拷贝链表***********"<<endl;
 	print_list(copyRes1);
+	cout<<"**********拷贝链表-map*******"<<endl;
+	Node *copyRes2 = copyListWithRand_useMap(head);
+	print_list(copyRes2);
 } 
 

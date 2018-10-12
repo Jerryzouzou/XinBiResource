@@ -1,0 +1,6 @@
+#ifndef __LINKLIST_FINDFIRSTINTERSECTNODE_H__
+#define __LINKLIST_FINDFIRSTINTERSECTNODE_H__
+
+void linkListTwo_findFirstIntersectNode_main();
+
+#endif

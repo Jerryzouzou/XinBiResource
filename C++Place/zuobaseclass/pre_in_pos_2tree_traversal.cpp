@@ -151,6 +151,61 @@ void posOrderUnRecur2(struct Node* head){
 	}	
 }
 
+/*
+* 二叉树镜像，前序遍历，递归方式 
+*/
+void mirrorRecursively(struct Node* head){
+	if(head == NULL){
+		return;
+	}
+	//cout<<head->value<<" ";
+	if(head->left==NULL && head->right==NULL){ 	//说明是无孩子的叶 
+		return;
+	} 
+	Node* tmp = head->left;
+	head->left = head->right;
+	head->right = tmp; 
+	
+	if(head->left){
+		preOrderRecur(head->left);	
+	}
+	if(head->right){
+		preOrderRecur(head->right);	
+	}
+}
+
+/*
+* 二叉树镜像，前序遍历，非递归方式；就是将打印部分改为左右孩子交换 
+* 先把头压入栈，然后在栈不为空的条件下，弹出栈顶并打印，然后右孩子不为空压入右孩子，左孩子不为空压入左孩子
+* 这样就保证先打印左孩子作为头结点，左边打印完后再打印右边 
+*/
+void mirrorRecursively_unRecur(struct Node* head){
+	if(head == NULL){
+		return;
+	}
+	stack<struct Node*> t_stack;
+	t_stack.push(head);
+	while(!t_stack.empty()){
+		head = t_stack.top();		//返回栈顶元素，不弹出 
+		t_stack.pop();		//删除栈顶元素，没有返回值 
+		//cout<<head->value<<" ";
+		
+		if(head->left==NULL && head->right==NULL){ 	//说明是无孩子的叶 
+			continue;
+		} 
+		Node* tmp = head->left;
+		head->left = head->right;
+		head->right = tmp;
+		
+		if(head->right != NULL){
+			t_stack.push(head->right);
+		}
+		if(head->left != NULL){
+			t_stack.push(head->left);
+		}
+	}
+}
+
 void pre_in_pos_2tree_traversal_main(){
 	struct Node *head = new Node(5);
 	head->left = new Node(3);

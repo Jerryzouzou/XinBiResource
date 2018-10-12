@@ -66,6 +66,8 @@ int main(int argc, char** argv) {
 	linkList_isLoop_main();		//链表是否有环和入环点 
 	cout<<"------------链表反转-单向-双向-------------" <<endl;
 	linkList_reverse_main();	//反转单向和双向链表 
+	cout<<"------------俩单向链表相交点-----------" <<endl;
+	linkListTwo_findFirstIntersectNode_main();	//两个链表相交的各种问题 
 	
 	return 0;
 }
