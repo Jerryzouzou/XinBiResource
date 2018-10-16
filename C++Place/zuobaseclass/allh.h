@@ -51,6 +51,8 @@
 #include "linkList_isLoop.h"
 #include "linkList_reverse.h"
 #include "linkListTwo_findFirstIntersectNode.h"
+#include "smallSum.h"
+#include "dp_factorial.h"
 
 #define random(x) (rand()%(x))
 

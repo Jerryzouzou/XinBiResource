@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
 	bucket_sort_main();		//桶排序--0~200 
 	cout<<"------------二叉树遍历------------" <<endl;
 	pre_in_pos_2tree_traversal_main();		//二叉树遍历 
-	cout<<"------------小米笔试-DP------------" <<endl;
+	cout<<"------------小米笔试-DP-Money问题------------" <<endl;
 	xiaomi_main();		//动态规划--不同数组不重复能否组合成指定数 
 	cout<<"------------获取走的方法数-DP------" <<endl;
 	dp_roadWays_main();	//动态规划--范围1~n，当前位置p，走k步，能走到m的方法数； 
@@ -68,6 +68,10 @@ int main(int argc, char** argv) {
 	linkList_reverse_main();	//反转单向和双向链表 
 	cout<<"------------俩单向链表相交点-----------" <<endl;
 	linkListTwo_findFirstIntersectNode_main();	//两个链表相交的各种问题 
+	cout<<"------------数组小数和问题-----------" <<endl;
+	smallSum_main();	//小数和问题 
+	cout<<"------------阶乘n!--dp---------------" <<endl;
+	dp_factorial_main();	//n!阶乘 
 	
 	return 0;
 }
