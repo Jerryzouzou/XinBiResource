@@ -44,6 +44,45 @@ bool miHomeGiftBag(vector < int > p, int M) {
 	}	
 	return dp[M]; 
 }
+
+static bool	digui_process(vector < int > p, int i, int sum, int M);
+
+static bool	digui_money(vector < int > p, int M){
+	return digui_process(p, 0, 0, M); 
+} 
+/*
+* 使用递归方式，每个价格要或者不要的和递归去比对M，有一个相同就返回ture 
+*/
+static bool	digui_process(vector < int > p, int i, int sum, int M){
+	if(sum == M){
+		return true;
+	}
+	if(i == p.size()){		//上面下来说明此时sum != M 
+		return false;
+	}
+	return  digui_process(p, i+1, sum, M) || digui_process(p, i+1, sum+p[i], M);
+}
+
+/*
+* 上面递归对应的Dp方式，递归是从下往上，DP的循环则从上往下 
+*/
+static bool	dp_money(vector < int > p, int M){
+	vector<vector<bool> > dp(p.size()+1, vector<bool>(M+1));
+	for(int i=0; i<p.size(); i++){
+		dp[i][M] = true;		//能定值得初始化 
+	} 
+	for(int i=p.size()-1; i>=0; i--){
+		for(int j=M-1; j>=0; j--){
+			dp[i][j] = dp[i+1][j];
+			if(j+p[i] <= M){
+				dp[i][j] = dp[i+1][j] || dp[i+1][j+p[i]];
+				//dp[i][j] = dp[i][j] || dp[i+1][j+p[i]];
+			}
+		}
+	}
+	
+	return dp[0][0]; 
+}
     
 void xiaomi_main(){
 	bool res;
@@ -75,5 +114,8 @@ void xiaomi_main(){
     
     res = miHomeGiftBag(_p, _M);
 	cout<<"---小米--res=="<<res<<endl;
+	
+	cout<<"---小米--Money问题--递归方式--=="<<digui_money(_p, _M)<<endl;
+	cout<<"---小米--Money问题--DP方式--=="<<dp_money(_p, _M)<<endl;
 }
 
