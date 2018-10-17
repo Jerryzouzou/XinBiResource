@@ -1,0 +1,6 @@
+第一章：栈和队列
+1.1、设计一个有getMin()的栈--√--zuobaseclass---getMin_stack
+1.2、两个栈实现队列----------√--zuobaseclass---stack_queue_convert
+1.3、仅用递归函数和栈操作逆序一个栈-----√
+1.4、猫狗队列
+1.5、用一个栈实现另一个栈-----√
