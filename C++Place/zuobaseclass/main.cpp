@@ -72,6 +72,8 @@ int main(int argc, char** argv) {
 	smallSum_main();	//小数和问题 
 	cout<<"------------阶乘n!--dp---------------" <<endl;
 	dp_factorial_main();	//n!阶乘 
+	cout<<"------------局部最小值-二分法---------------" <<endl;
+	findOneLessValueIndex_main();	//局部最小值-二分法 
 	
 	return 0;
 }

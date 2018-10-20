@@ -25,6 +25,9 @@ struct DoubleNode{
 * 三个指针指向一二三节点，二指针的next指向一；一移到二，二三分别指向下一个，即向右移，再循环上面的
 */
 static struct Node* reverseList(Node* head){
+	if(head==NULL || head->next==NULL){
+		return head;
+	}
 	Node* pre = NULL;
 	Node* next = NULL;
 	while(head != NULL){
