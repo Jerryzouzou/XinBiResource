@@ -4,7 +4,7 @@ using namespace std;
 /*
 * 实现将栈从顶到底从大到小排序，只允许申请一个栈help
 * 在m_stack上执行弹出栈顶，弹出的元素为cur，
-* 如果cur<=help的栈顶元素，则将cur直接压入help；
+* 如果cur>=help的栈顶元素，则将cur直接压入help；
 * 如果cur>help的栈顶元素，则将help的元素逐一弹出，逐一压入m_stack，直到
 * cur<=help的栈顶元素，再将cur压入help。 
 * 这样就help保证栈顶 

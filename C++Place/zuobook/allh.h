@@ -8,6 +8,7 @@
 #include <cstdio>
 #include <vector>
 #include <queue>
+#include <deque>
 #include <string>
 #include <cstring>
 #include <climits>
@@ -23,6 +24,7 @@
 #include "tool.h" 
 #include "stack_reverse.h"
 #include "stack_sort_byStack.h"
+#include "array_window_getMax.h" 
 
 #define random(x) (rand()%(x))
 
