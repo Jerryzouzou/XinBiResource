@@ -25,6 +25,8 @@
 #include "stack_reverse.h"
 #include "stack_sort_byStack.h"
 #include "array_window_getMax.h" 
+#include "maxTree.h"
+#include "maxRecSize.h"
 
 #define random(x) (rand()%(x))
 
