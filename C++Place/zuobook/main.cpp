@@ -15,6 +15,10 @@ int main(int argc, char** argv) {
 	maxTree_main();
 	cout<<"------------最大子矩阵的大小------------" <<endl;
 	maxRecSize_main();
+	cout<<"------------数组子数组max-min<=num的子数组个数------------" <<endl;
+	allLessNumSubArray_main();
+	cout<<"------------单向链表双向链表删除倒数第K个节点------------" <<endl;
+	removeLastKthNode_main();
 	/*cout<<"------------冒泡法排序------------" <<endl;
 	bubble_main();		//冒泡法排序 */
 	

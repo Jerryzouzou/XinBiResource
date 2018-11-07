@@ -27,6 +27,8 @@
 #include "array_window_getMax.h" 
 #include "maxTree.h"
 #include "maxRecSize.h"
+#include "allLessNumSubArray.h"
+#include "removeLastKthNode.h"
 
 #define random(x) (rand()%(x))
 
