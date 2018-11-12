@@ -19,6 +19,10 @@ int main(int argc, char** argv) {
 	allLessNumSubArray_main();
 	cout<<"------------单向链表双向链表删除倒数第K个节点------------" <<endl;
 	removeLastKthNode_main();
+	cout<<"------------删除链表中间节点和a/b处节点------------" <<endl;
+	remove_mid_ab_Node_main();
+	cout<<"------------反转部分链表------------" <<endl;
+	linkList_reversePart_main();
 	/*cout<<"------------冒泡法排序------------" <<endl;
 	bubble_main();		//冒泡法排序 */
 	

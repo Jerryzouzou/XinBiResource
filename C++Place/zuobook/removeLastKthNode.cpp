@@ -72,13 +72,13 @@ DoubleNode* removeLastKthDoubleNode(DoubleNode* head, int k){
 } 
 
 /*
-*???????? 
+*根据数组产生链表 
 */
 static struct Node* createList(int* arr, int len){
 	Node *head, *p1;
 	head = (struct Node*)malloc(sizeof(Node));
 	if((p1=(struct Node*)malloc(sizeof(Node))) == 0){
-		cout<<"??????";
+		cout<<"分配内存失败";
 		exit(0);
 	}
 	if(len < 1) return NULL;
@@ -96,7 +96,7 @@ static struct Node* createList(int* arr, int len){
 }
 
 /*
-* ???? 
+* 打印链表 
 */
 static void print_list(struct Node* head){
 	//Node *p1 = &head;
@@ -108,13 +108,13 @@ static void print_list(struct Node* head){
 }
 
 /*
-*?????????? 
+*根据数组产生双向链表 
 */
 static struct DoubleNode* createDoubleList(int* arr, int len){
 	DoubleNode *head, *p1;
 	head = (struct DoubleNode*)malloc(sizeof(DoubleNode));
 	if((p1=(struct DoubleNode*)malloc(sizeof(DoubleNode))) == 0){
-		cout<<"??????";
+		cout<<"分配内存失败";
 		exit(0);
 	}
 	if(len < 1) return NULL;
@@ -136,13 +136,13 @@ static struct DoubleNode* createDoubleList(int* arr, int len){
 }
 
 /*
-* ?????? 
+* 打印双向链表 
 */
 static void print_doublelist(struct DoubleNode* head){
 	DoubleNode* end = NULL;
 	while(head != NULL){
 		cout<<head->value<<"->";
-		end = head;		//???end???????? 
+		end = head;		//循环完end指向最后一个节点 
 		head = head->next;
 	}
 	cout<<" | ";
