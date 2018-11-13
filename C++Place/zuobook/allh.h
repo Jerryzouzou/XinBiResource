@@ -27,6 +27,10 @@
 #include "array_window_getMax.h" 
 #include "maxTree.h"
 #include "maxRecSize.h"
+#include "allLessNumSubArray.h"
+#include "removeLastKthNode.h"
+#include "remove_mid_ab_Node.h"
+#include "linkList_reversePart.h"
 
 #define random(x) (rand()%(x))
 
