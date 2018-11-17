@@ -54,6 +54,9 @@
 #include "smallSum.h"
 #include "dp_factorial.h"
 #include "findOneLessValueIndex.h"
+#include "tree_maxdistance.h"
+#include "tree_isBalanced.h"
+#include "tree_isBSTAndCBT.h"
 
 #define random(x) (rand()%(x))
 

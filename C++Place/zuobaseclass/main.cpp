@@ -74,6 +74,12 @@ int main(int argc, char** argv) {
 	dp_factorial_main();	//n!阶乘 
 	cout<<"------------局部最小值-二分法---------------" <<endl;
 	findOneLessValueIndex_main();	//局部最小值-二分法 
+	cout<<"------------二叉树最大间隔-returnData---------------" <<endl;
+	tree_maxdistance_main();
+	cout<<"------------二叉树是否是平衡二叉树-returnData---------------" <<endl;
+	tree_isBalanced_main();
+	cout<<"------------二叉树是否是BST CBT-returnData---------------" <<endl;
+	tree_isBSTAndCBT_main();
 	
 	return 0;
 }
