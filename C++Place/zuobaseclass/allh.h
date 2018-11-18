@@ -57,6 +57,7 @@
 #include "tree_maxdistance.h"
 #include "tree_isBalanced.h"
 #include "tree_isBSTAndCBT.h"
+#include "tree_successorNode.h"
 
 #define random(x) (rand()%(x))
 

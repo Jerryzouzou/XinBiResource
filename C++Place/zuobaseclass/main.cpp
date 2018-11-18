@@ -80,6 +80,8 @@ int main(int argc, char** argv) {
 	tree_isBalanced_main();
 	cout<<"------------二叉树是否是BST CBT-returnData---------------" <<endl;
 	tree_isBSTAndCBT_main();
+	cout<<"------------二叉树后继节点---------------" <<endl;
+	tree_successorNode_main();
 	
 	return 0;
 }
