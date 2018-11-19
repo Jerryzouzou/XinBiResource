@@ -82,6 +82,12 @@ int main(int argc, char** argv) {
 	tree_isBSTAndCBT_main();
 	cout<<"------------二叉树后继节点---------------" <<endl;
 	tree_successorNode_main();
+	cout<<"------------折纸问题---------------" <<endl;
+	tree_paperFolding_main();
+	cout<<"------------完全二叉树节点个数---------------" <<endl;
+	tree_completeTreeNodeNumber_main();
+	cout<<"------------二叉树序列化和反序列化---------------" <<endl;
+	tree_serializeAndReconstruct_main();
 	
 	return 0;
 }

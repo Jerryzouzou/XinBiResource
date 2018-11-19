@@ -58,6 +58,9 @@
 #include "tree_isBalanced.h"
 #include "tree_isBSTAndCBT.h"
 #include "tree_successorNode.h"
+#include "tree_paperFolding.h"
+#include "tree_completeTreeNodeNumber.h"
+#include "tree_serializeAndReconstruct.h"
 
 #define random(x) (rand()%(x))
 

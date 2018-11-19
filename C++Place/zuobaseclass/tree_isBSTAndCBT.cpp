@@ -90,6 +90,40 @@ bool isCBT(Node* head){
 	return process1(head)->isCBT;
 }
 
+/*
+* 宽度优先遍历用队列：按层递归判断，有右无左返回false，有左无右时应该后面的节点都是叶节点(无左右孩子的节点)
+* 先把头节点压入队列，后面每次循环都先弹出栈顶做上面条件判断，再分别压入左右，然后进行下一次循环 
+*/
+bool isCBT_queue(Node* head){
+	if(head == NULL){
+		return true;
+	}
+	queue<Node*> mqueue;
+	Node* l = NULL;
+	Node* r = NULL;
+	bool leaf = false;		//是否开始为后面节点都应该是叶节点 
+	mqueue.push(head);
+	while(!mqueue.empty()){
+		head = mqueue.front();
+		mqueue.pop();
+		l = head->left;
+		r = head->right;
+		if((r!=NULL && l==NULL) || (leaf && (l!=NULL || r!= NULL))){	//两个返回false的条件 
+			return false;
+		}
+		//弹出队列头判断处理后依次压入左右孩子 
+		if(l != NULL){
+			mqueue.push(l);
+		}
+		if(r != NULL){
+			mqueue.push(r);
+		}else{
+			leaf = true;	//无右说明后面的节点都应该是叶节点 
+		}
+	}
+	return true;
+}
+
 void tree_isBSTAndCBT_main(){
 	bool res;
 	Node* head = new Node(4);
@@ -106,4 +140,7 @@ void tree_isBSTAndCBT_main(){
 	
 	res = isCBT(head);
 	cout<<"tree_isCBT is == "<<res<<endl;
+	
+	res = isCBT_queue(head);
+	cout<<"tree_isCBT_queue is == "<<res<<endl;
 }

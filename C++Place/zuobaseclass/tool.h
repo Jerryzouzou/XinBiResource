@@ -9,5 +9,8 @@ bool isEqual_intArr(int *arr1, int* arr2, int len1, int len2);	//判断int数组是否
 void print_int_array(int* arr, int len);	//打印int数组，以空格间隔 
 void partition(int* arr, int* p, int l, int r, int v); 		//对数组l~r范围划分小于区等于区大于区，P是参照值 
 void printMatrix_vector(vector<vector<int> > matrix);	//打印vector-int的二维数组  
+void int2str(const int &int_temp,string &string_temp);	//int转string 
+void str2int(int &int_temp,const string &string_temp); 	//string转int 
+std::vector<std::string> split(std::string str,std::string pattern);		//字符串分隔 
 
 #endif

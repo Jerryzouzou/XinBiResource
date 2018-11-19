@@ -16,3 +16,30 @@ struct Node{
 	Node(int a=0):value(a), left(NULL), right(NULL){};
 };
 
+/*
+* i:打印到第i层
+* N:二叉树深度
+* down:打印down还是up 
+*/
+void printProcess(int i, int N, bool down){
+	if(i > N){
+		return;
+	} 
+	printProcess(i+1, N, true);
+	if(down){
+		cout<<"down"<<endl;
+	}else{
+		cout<<"up"<<endl;
+	}
+	printProcess(i+1, N, false);
+}
+
+void printAllFolds(int N){
+	printProcess(1, N, true);
+}
+
+void tree_paperFolding_main(){
+	int N = 4;
+	printAllFolds(N);
+}
+

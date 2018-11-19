@@ -132,7 +132,45 @@ bool digui_erfen(int* arr, int l, int r, int v){
 	}
 } 
 
+/*
+* int转string 
+*/
+void int2str(const int &int_temp,string &string_temp)  
+{  
+        stringstream stream;  
+        stream<<int_temp;  
+        string_temp=stream.str();   //此处也可以用 stream>>string_temp  
+} 
 
+/*
+* string转int 
+*/
+void str2int(int &int_temp,const string &string_temp)  
+{  
+    stringstream stream(string_temp);  
+    stream>>int_temp;  
+} 
 
-
+/*
+*字符串分割函数
+*/
+std::vector<std::string> split(std::string str,std::string pattern)
+{
+    std::string::size_type pos;
+    std::vector<std::string> result;
+    str+=pattern;//扩展字符串以方便操作
+    int size=str.size();
+ 
+    for(int i=0; i<size; i++)
+    {
+        pos=str.find(pattern,i);
+        if(pos<size)
+        {
+            std::string s=str.substr(i,pos-i);
+            result.push_back(s);
+            i=pos+pattern.size()-1;
+        }
+    }
+    return result;
+}
 
