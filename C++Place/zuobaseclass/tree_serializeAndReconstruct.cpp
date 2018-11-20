@@ -5,7 +5,8 @@ using namespace std;
 * 二叉树序列化和反序列化---二叉树转化为字符串序列化--和通过字符串构造出二叉树
 * 递归方式：前序遍历方式序列化，将打印时改为序列化字符串有值是为"v_"，无值时为"#_"
 * 反序列化同理。
-*  
+* 宽度优先遍历按层序列化：用队列宽度优先遍历，先把头节点压入队列，后面每次循环都先弹出栈顶做上面条件判断，
+* 再分别压入左右，然后进行下一次循环，进行序列化或反序列化 
 */
 
 struct Node{
@@ -15,7 +16,7 @@ struct Node{
 	Node(int a=0):value(a), left(NULL), right(NULL){};
 };
 
-static Node* reconPreOrder(queue<string> qstr);
+static Node* reconPreOrder(queue<string>& qstr);
 
 /*
 * 前序遍历递归方式序列化二叉树 
@@ -45,43 +46,98 @@ static Node* reconByPreString(string preStr){
 	vector<string> vstr = split(preStr, "_");
 	queue<string> qstr;
 	//用队列来保存节点值，队列好做消费掉 
-	cout<<endl;
-	for(int i=0; i<vstr.size(); i++){
+	for(int i=0; i<vstr.size()-1; i++){
 		qstr.push(vstr[i]);
-		cout<<vstr[i];
 	} 
-	cout<<endl;
+	
 	return reconPreOrder(qstr);
 }
 /*
 * 递归前序遍历的反序列化 
+* 要用引用传递或按指针传递，否则队列消耗有异常 
 */
-static Node* reconPreOrder(queue<string> qstr){
+static Node* reconPreOrder(queue<string>& qstr){
 	string value = qstr.front();
 	qstr.pop();
-	cout<<"cin val "<<value<<endl;
+	//cout<<"cin val "<<value<<endl;
 	if(value == "#"){
-		//cout<<"cin # "<<endl;
 		return NULL;
 	}
 	int itmp = 0;
 	str2int(itmp, value);
 	Node* head = new Node(itmp);
-	//cout<<"head-val--"<<itmp<<endl;
 	head->left = reconPreOrder(qstr);
-//	if(!head->left){
-//		cout<<"head-left--null"<<endl;
-//	}else{
-//		cout<<"head-left--"<<head->left->value<<endl;	
-//	}
-	
 	head->right = reconPreOrder(qstr);
-//	if(!head->right){
-//		cout<<"head-right--null"<<endl;
-//	}else{
-//		cout<<"head-right--"<<head->right->value<<endl;
-//	}
 	
+	return head;
+}
+
+/*
+* 宽度优先遍历方式序列化二叉树 
+*/
+static string serialByLevel(Node* head){
+	if(head == NULL){
+		return "#_";
+	}
+	string res, stmp;
+	int2str(head->value, stmp);
+	res += stmp;
+	res += "_";
+	queue<Node*> mqueue;
+	mqueue.push(head);
+	while(!mqueue.empty()){
+		head = mqueue.front();
+		mqueue.pop();
+		if(head->left != NULL){
+			int2str(head->left->value, stmp);
+			res += stmp;
+			res += "_";
+			mqueue.push(head->left);
+		}else{
+			res += "#_";
+		}
+		if(head->right != NULL){
+			int2str(head->right->value, stmp);
+			res += stmp;
+			res += "_";
+			mqueue.push(head->right);
+		}else{
+			res += "#_";
+		}
+	}
+	return res;
+}
+
+static Node* generateNodeByString(string val){
+	if(val == "#"){
+		return NULL;
+	}
+	int itmp = 0;
+	str2int(itmp, val);
+	return new Node(itmp);
+}
+
+static Node* reconByLevelString(string levelStr){
+	vector<string> vstr = split(levelStr, "_");
+	int index = 0;
+	Node* head = generateNodeByString(vstr[index++]);
+	queue<Node*> mqueue;
+	if(head != NULL){
+		mqueue.push(head);
+	}
+	Node* cur = NULL;
+	while(!mqueue.empty()){
+		cur = mqueue.front();
+		mqueue.pop();
+		cur->left = generateNodeByString(vstr[index++]);
+		cur->right = generateNodeByString(vstr[index++]);
+		if(cur->left != NULL){
+			mqueue.push(cur->left);
+		}
+		if(cur->right != NULL){
+			mqueue.push(cur->right);
+		}
+	}
 	return head;
 }
 
@@ -107,8 +163,16 @@ void tree_serializeAndReconstruct_main(){
 	preOrderRecur(head);
 	cout<<endl;
 	string res = serialByPre(head);
-	cout<<"序列化---"<<res<<endl;
+	cout<<"前序遍历序列化---"<<res<<endl;
 	Node* head1 = reconByPreString(res);
+	cout<<"反序列化二叉树前序遍历---";
 	preOrderRecur(head1);
+	cout<<endl;
 	
+	res = serialByLevel(head);
+	cout<<"宽度优先遍历序列化---"<<res<<endl;
+	head1 = reconByLevelString(res);
+	cout<<"反序列化二叉树前序遍历---";
+	preOrderRecur(head1);
+	cout<<endl;
 }
