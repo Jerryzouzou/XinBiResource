@@ -2,6 +2,21 @@
 
 using namespace std;
 
+void test(const int i){
+	//i++;
+	///printf("asaf222--i==%d", i);
+}
+
+void demo1(){
+	char *str = "hello world!";
+	cout<<"str=="<<str<<endl;
+	int *p = (int *)str;
+	cout<<"str111=="<<str<<endl;
+	p++;
+	cout<<"str222=="<<str<<endl;
+	*p = 0;
+	cout<<"str333=="<<*p<<endl;
+}
 
 int main(int argc, char** argv) {
 	
@@ -25,9 +40,14 @@ int main(int argc, char** argv) {
 	linkList_reversePart_main();
 	cout<<"------------环形链表的约瑟夫问题------------" <<endl;
 	linkList_josephusProblem_main();
+	cout<<"------------盛最多水的容器------------" <<endl;
+	maxArea_water_main();
 	/*cout<<"------------冒泡法排序------------" <<endl;
 	bubble_main();		//冒泡法排序 */
 	
-	
+	/*const int i=10;
+	printf("asaf--i==%d", i);
+	test(i);*/
+	demo1();
 	return 0;
 }

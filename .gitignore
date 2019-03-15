@@ -1,0 +1,14 @@
+#pvcanset3561
+JavaPlace/.metadata/
+bin/
+C++Place/zuobaseclass/*.o
+C++Place/zuobaseclass/Makefile.win
+C++Place/zuobaseclass/baseclass.dev
+C++Place/zuobaseclass/baseclass.exe
+C++Place/zuobaseclass/baseclass.layout
+sourceinsign/
+C++Place/zuobook/*.o
+C++Place/zuobook/Makefile.win
+C++Place/zuobook/zuobook.dev
+C++Place/zuobook/zuobook.exe
+C++Place/zuobook/zuobook.layout
